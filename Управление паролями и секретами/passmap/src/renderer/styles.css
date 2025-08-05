@@ -1,0 +1,2 @@
+body, html, #map { height: 100%; margin: 0; }
+.leaflet-popup-content { font-size: 14px; }

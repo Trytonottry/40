@@ -1,0 +1,26 @@
+{
+  "name": "teamvault-lite",
+  "version": "1.0.0",
+  "description": "Free password-manager for small teams (<50) with breached-password audit",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon backend/src/index.js",
+    "docker:up": "docker-compose -f backend/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f backend/docker-compose.yml down",
+    "cli": "node cli/tv-cli.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.6",
+    "crypto-js": "^4.2.0",
+    "zxcvbn": "^4.4.2",
+    "node-fetch": "^3.3.2",
+    "commander": "^11.1.0",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

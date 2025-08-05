@@ -1,0 +1,33 @@
+{
+  "name": "passmap",
+  "version": "1.0.0",
+  "description": "Gamified password manager on the world map",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "docker:build": "docker build -t passmap .",
+    "docker:run": "docker run --rm -it -v $(pwd)/data:/app/data -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix passmap"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "zxcvbn": "^4.4.2",
+    "crypto-js": "^4.2.0",
+    "electron-store": "^8.1.0",
+    "uuid": "^9.0.1"
+  },
+  "build": {
+    "appId": "com.example.passmap",
+    "productName": "PassMap",
+    "directories": {
+      "output": "dist"
+    },
+    "files": ["src/**/*", "package.json"]
+  }
+}
