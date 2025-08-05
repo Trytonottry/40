@@ -1,0 +1,10 @@
+{
+  "name": "usb-warden",
+  "version": "1.0.0",
+  "description": "Offline USB storage blocker with X.509 whitelist",
+  "scripts": {
+    "build-linux": "make -C driver/linux",
+    "build-win": "msbuild driver/windows/usb_warden.sln /p:Configuration=Release",
+    "cli": "python3 cli/wardenctl.py"
+  }
+}

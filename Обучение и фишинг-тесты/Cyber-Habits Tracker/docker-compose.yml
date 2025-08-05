@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  bot:
+    build: bot
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: cht
+      POSTGRES_PASSWORD: cht
+      POSTGRES_DB: cht
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+[project]
+name = "secretcanary"
+version = "1.0.0"
+description = "CLI for repo-embedded Canary tokens"
+dependencies = [
+  "typer>=0.9",
+  "requests>=2.31",
+  "pydantic>=2.7",
+  "pyyaml>=6.0",
+  "cryptography>=42.0",
+  "jira>=3.8",
+  "slack-sdk>=3.27",
+]
+[project.scripts]
+secretcanary = "secretcanary.__main__:app"

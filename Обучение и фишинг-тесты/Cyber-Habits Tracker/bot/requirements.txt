@@ -1,0 +1,6 @@
+slack-bolt==1.19
+sqlalchemy==2.0
+alembic==1.13
+weasyprint==62.3
+python-dotenv==1.0
+schedule==1.2

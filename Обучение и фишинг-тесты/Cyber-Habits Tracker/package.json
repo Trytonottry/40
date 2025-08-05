@@ -1,0 +1,10 @@
+{
+  "name": "cyber-habits-tracker",
+  "version": "1.0.0",
+  "description": "Daily Slack bot for cybersecurity habits",
+  "scripts": {
+    "dev": "docker-compose up --build",
+    "deploy": "cd terraform && terraform apply",
+    "cli": "python cli/chctl.py"
+  }
+}

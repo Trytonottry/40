@@ -1,0 +1,17 @@
+name: Canary-Check
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install SecretCanary
+      run: pip install git+https://github.com/yourorg/secretcanary
+    - name: Watch leaks
+      run: secretcanary watch-loop --repo ${{ github.repository }} --interval 60
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        JIRA_TOKEN: ${{ secrets.JIRA_TOKEN }}

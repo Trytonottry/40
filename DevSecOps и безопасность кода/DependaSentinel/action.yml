@@ -1,0 +1,17 @@
+name: "DependaSentinel"
+description: "AST-based CVE filter (false-positive ≤ 15 %)"
+author: "YourOrg"
+inputs:
+  fail-on-severity:
+    description: "low|moderate|high|critical"
+    required: false
+    default: "moderate"
+  github-token:
+    description: "GITHUB_TOKEN"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "--severity=${{ inputs.fail-on-severity }}"
+    - "--token=${{ inputs.github-token }}"

@@ -1,0 +1,9 @@
+{
+  "name": "phishquest-gpt",
+  "version": "1.0.0",
+  "description": "AI-driven phishing simulation SaaS",
+  "scripts": {
+    "dev": "docker-compose up --build",
+    "deploy": "cd terraform && terraform apply"
+  }
+}

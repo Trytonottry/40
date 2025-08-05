@@ -1,0 +1,24 @@
+[Version]
+Signature = "$Windows NT$"
+Class = "USB"
+ClassGuid = {36fc9e60-c465-11cf-8056-444553540000}
+Provider = %ProviderName%
+DriverVer = 08/05/2025,1.0.0.0
+
+[Manufacturer]
+%ProviderName% = USBWarden,NTamd64
+
+[USBWarden.NTamd64]
+%USBWarden.DeviceDesc% = USBWarden_Install, USB\Class_08
+
+[USBWarden_Install.NT]
+Include = winusb.inf
+Needs   = WINUSB.NT
+
+[USBWarden_Install.NT.Services]
+Include = winusb.inf
+AddService = WinUsb,0x00000002,WinUsb_ServiceInstall
+
+[Strings]
+ProviderName = "USB-Warden"
+USBWarden.DeviceDesc = "USB Storage Filter"
